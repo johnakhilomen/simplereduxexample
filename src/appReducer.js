@@ -14,6 +14,8 @@ export default function appReducer(state = [], action)
                 }
                
             ]
+        case 'removeEmployee':
+            return state.filter((emp=>emp.id !== action.payload.id)) 
         default:
             return state;
     }

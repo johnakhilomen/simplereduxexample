@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import store from "./store";
-import {addEmployee} from './actions';
+import {addEmployee, removeEmployee} from './actions';
 
 function App() {
 
@@ -10,11 +10,23 @@ function App() {
     fullname: 'Jane Smith',
     description: 'Description'
   };
+  const emp2 = {
+    id: 2,
+    fullname: 'Bob Smith',
+    description: 'Description'
+  };
   store.dispatch(addEmployee(emp))
   /*store.subscribe (()=> {
     console.log("Store changed!", store.getState());
   });*/
   console.log(store.getState());
+
+  store.dispatch(addEmployee(emp2));
+  console.log(store.getState());
+
+  store.dispatch(removeEmployee(1));
+  console.log(store.getState());
+
   return (
     <div className="App">
       <header className="App-header">
