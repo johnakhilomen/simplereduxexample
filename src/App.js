@@ -16,6 +16,7 @@ function App() {
     description: 'Description'
   };
   store.dispatch(addEmployee(emp))
+  //UI Components need to subscribe to the store so that they're notified of changes
   /*store.subscribe (()=> {
     console.log("Store changed!", store.getState());
   });*/
